@@ -4,6 +4,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
+// Importar rutas
+const tatuadoresRoutes = require('./routes/tatuadores');
+app.use('/api/tatuadores', tatuadoresRoutes);
+
 app.get('/', (req, res) => {
     res.json({ mensaje: "API Estudio de Tatuajes funcionando correctamente" });
 });
