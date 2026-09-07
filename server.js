@@ -5,6 +5,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // Importar rutas
+const tatuadoresRoutes = require('./routes/tatuadores');
+app.use('/api/tatuadores', tatuadoresRoutes);
+
 const clientesRoutes = require('./routes/clientes');
 app.use('/api/clientes', clientesRoutes);
 
@@ -13,5 +16,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(Servidor corriendo en el puerto ${PORT});
+    console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
