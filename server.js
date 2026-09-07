@@ -8,6 +8,9 @@ app.use(express.json());
 const tatuadoresRoutes = require('./routes/tatuadores');
 app.use('/api/tatuadores', tatuadoresRoutes);
 
+const clientesRoutes = require('./routes/clientes');
+app.use('/api/clientes', clientesRoutes);
+
 app.get('/', (req, res) => {
     res.json({ mensaje: "API Estudio de Tatuajes funcionando correctamente" });
 });
